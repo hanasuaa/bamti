@@ -108,3 +108,21 @@ def main():
             st.write("**선택한 맛:** 아직 선택하지 않으셨어요 ☁️")
 
         st.write(f"**최종 결제 금액:** 💰 **{price:,}원**")
+        st.write(f"**결제 방법:** {payment_method}")
+
+        # 주문 완료 버튼
+        if st.button("✅ 이대로 주문 완료하기"):
+            if not selected_flavors:
+                st.warning("아이스크림 맛을 **한 가지 이상** 선택해 주세요! 🍦")
+            else:
+                st.success(
+                    "주문이 완료되었습니다! 🎉\n\n"
+                    "맛있게 드시고, 달콤한 하루 보내세요 💕"
+                )
+
+    else:
+        st.info("먼저 위에서 **용기**를 선택해 주세요! (싱글, 더블, 파인트 등) 🧺")
+
+
+if __name__ == "__main__":
+    main()
